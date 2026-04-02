@@ -1,0 +1,11 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.itmk.web.sys_notice.mapper.SysNoticeMapper">
+
+
+    <select id="getOne" resultType="com.itmk.web.sys_notice.entity.SysNotice">
+        select * from sys_notice order by create_time desc limit 1
+    </select>
+</mapper>

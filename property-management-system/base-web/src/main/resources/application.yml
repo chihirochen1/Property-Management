@@ -1,0 +1,24 @@
+#spring:
+#  profiles:
+#    active: test
+
+# 服务器配置
+server:
+  port: 8099  # 后端端口，确保未被占用
+
+# 数据库配置（适配 XAMPP MySQL）
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/property_management?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&useSSL=false
+    username: root
+    password: ""  # XAMPP MySQL 默认空密码
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+# 解决 itmk.loginUrl 找不到的核心配置
+itmk:
+  loginUrl: /api/user/login # 登录接口路径，固定写死即可
+
+jwt:
+  secret: itmk123456
+  expiration: 604800000
