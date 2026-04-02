@@ -1,0 +1,10 @@
+密码都是123
+
+项目访问地址：http://localhost:9528/
+管理员：admin----123
+用户：zhangsan----123
+
+附带角色：（这些可自行选择需不需要）
+收费员：shoufeizhang----123
+维修员：weixiuliu----123
+业主管理员：yezhuguanli----123
