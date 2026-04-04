@@ -6,7 +6,7 @@
 server:
   port: 8099  # 后端端口，确保未被占用
 
-# 数据库配置（适配 XAMPP MySQL）
+# 数据库配置（适配 XAMPP MySQL + 修复Druid报错）
 spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
@@ -14,6 +14,14 @@ spring:
     username: root
     password: ""  # XAMPP MySQL 默认空密码
     driver-class-name: com.mysql.cj.jdbc.Driver
+    # 解决报错
+    druid:
+      test-while-idle: true
+      validation-query: SELECT 1
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 1800000
+      keep-alive: true
+      phy-max-use-count: 1000
 
 # 解决 itmk.loginUrl 找不到的核心配置
 itmk:
